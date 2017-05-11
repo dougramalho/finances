@@ -15,12 +15,22 @@ export const Recebimentos = (state=[], action) =>{
             return newArray;
         case CONSTANTS.INSERIR_RECEBIMENTO :
 			return [...state, action.payload];
+
         case CONSTANTS.EDITAR_RECEBIMENTO :
 
             newArray = Object.assign([], state);
-            newArray = newArray.map((recebimento, i) => recebimento.Id === action.payload.Id ? action.payload : recebimento);
+            let recebimento = newArray.filter((recebimento) => recebimento.id === action.payload);
 
-            return newArray;
+            return recebimento;
+
+        case CONSTANTS.SALVAR_RECEBIMENTO :
+            newArray = Object.assign([], state);
+            
+            newArray = newArray.map((recebimento, i) => recebimento.id === action.payload.id ? action.payload : recebimento);
+
+            state = newArray;
+
+            return state;
 		default:
 			return state;
 	}
@@ -42,7 +52,18 @@ export const Pagamentos = (state=[], action) =>{
             return [...state, action.payload];
         case CONSTANTS.EDITAR_PAGAMENTO :
             newArray = Object.assign([], state);
-            newArray = newArray.map((pagamento, i) => pagamento.Id === action.payload.Id ? action.payload : pagamento);
+            let pagamento = newArray.filter((pagamento) => pagamento.id === action.payload ? action.payload : pagamento);
+
+            return pagamento;
+
+        case CONSTANTS.SALVAR_PAGAMENTO :
+
+            newArray = Object.assign([], state);
+            
+            newArray = newArray.map((pagamento) => pagamento.id === action.payload.id ? action.payload : pagamento);
+
+            state = newArray;
+
             return state;
 		default:
 			return state;
