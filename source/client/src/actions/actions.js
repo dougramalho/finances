@@ -1,4 +1,4 @@
-import CONSTANTS from "./constants";
+import CONSTANTS from "../constants";
 
 export const ListarRecebimentos = (filtro) => {
     return {
@@ -45,13 +45,13 @@ export const InserirPagamentoDuplicata = (pagamento) => {
 export const EditarPagamento = (idPagamento) => {
     return {
         type: CONSTANTS.EDITAR_PAGAMENTO,
-        payload: idPagamento
+        payload: parseInt(idPagamento)
     };
 }
 
 export const EditarRecebimento = (idRecebimento) => {
     return {
         type: CONSTANTS.EDITAR_RECEBIMENTO,
-        payload: idPagamento
+        payload: parseInt(idRecebimento)
     };
 }
