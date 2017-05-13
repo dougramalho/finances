@@ -14,9 +14,6 @@ const { JSDOM } = jsdom;
 
 const dom = new JSDOM('<!doctype html><html><body></body></html>');
 
-// global.document = dom.window.document;//new JSDOM('<!doctype html><html><body></body></html>');
-// global.window = dom.window.document;
-// global.navigator = global.window.navigator;
 const $ = _$(dom.window);
 
 chaiJquery(chai, chai.util, $);

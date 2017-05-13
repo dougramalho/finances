@@ -1,0 +1,56 @@
+{
+    "results": [
+        {
+            "id": 1,
+            "valor": 19.50,
+            "destino": "Linhas",
+            "FormaPagamento": "Dinheiro",
+            "data": "2/10/2017",
+            "tipo": "especie"
+        },
+        {
+            "id": 2,
+            "valor": 150,
+            "destino": "Manutenção máquina",
+            "FormaPagamento": "Cheque",
+            "data": "2/6/2017",
+            "tipo": "especie"
+        },
+        {
+            "id": 3,
+            "valor": 95,
+            "destino": "Suprimentos",
+            "FormaPagamento": "Cheque",
+            "data": "3/21/2017",
+            "tipo": "duplicata",
+            "parcela": "1",
+            "totalParcelas": "3"
+        },
+        {
+            "id": 4,
+            "valor": 35,
+            "destino": "Agulhas",
+            "FormaPagamento": "Dinheiro",
+            "data": "3/11/2017",
+            "tipo": "especie"
+        },
+        {
+            "id": 5,
+            "valor": 150,
+            "destino": "Manutenção máquina",
+            "FormaPagamento": "Cheque",
+            "data": "4/16/2017",
+            "tipo": "especie"
+        },
+        {
+            "id": 6,
+            "valor": 25,
+            "destino": "Tecidos",
+            "FormaPagamento": "Cheque",
+            "data": "5/13/2017",
+            "tipo": "duplicata",
+            "parcela": "1",
+            "totalParcelas": "3"
+        }
+    ]
+}

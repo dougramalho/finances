@@ -1,0 +1,142 @@
+{
+    "results": [
+        {
+            "id": 1,
+            "valor": 19.50,
+            "destino": "Linhas",
+            "FormaPagamento": "Dinheiro",
+            "data": "2/10/2017",
+            "tipo": "especie",
+            "transacao": "pagamento"
+        },
+        {
+            "id": 2,
+            "valor": 150,
+            "destino": "Manutenção máquina",
+            "FormaPagamento": "Cheque",
+            "data": "2/6/2017",
+            "tipo": "especie",
+            "transacao": "pagamento"
+        },
+        {
+            "id": 3,
+            "valor": 95,
+            "destino": "Suprimentos",
+            "FormaPagamento": "Cheque",
+            "data": "3/21/2017",
+            "tipo": "duplicata",
+            "parcela": "1",
+            "totalParcelas": "3",
+            "transacao": "pagamento"
+        },
+        {
+            "id": 4,
+            "valor": 35,
+            "destino": "Agulhas",
+            "FormaPagamento": "Dinheiro",
+            "data": "3/11/2017",
+            "tipo": "especie",
+            "transacao": "pagamento"
+        },
+        {
+            "id": 5,
+            "valor": 150,
+            "destino": "Manutenção máquina",
+            "FormaPagamento": "Cheque",
+            "data": "4/16/2017",
+            "tipo": "especie",
+            "transacao": "pagamento"
+        },
+        {
+            "id": 6,
+            "valor": 25,
+            "destino": "Tecidos",
+            "FormaPagamento": "Cheque",
+            "data": "5/13/2017",
+            "tipo": "duplicata",
+            "parcela": "1",
+            "totalParcelas": "3",
+            "transacao": "pagamento"
+        },
+        {
+            "id": 1,
+            "valor": 15.50,
+            "cliente": "Douglas",
+            "FormaPagamento": "Dinheiro",
+            "data": "2/21/2017",
+            "transacao": "recebimento"
+        },
+        {
+            "id": 2,
+            "valor": 50,
+            "cliente": "Douglas",
+            "FormaPagamento": "Dinheiro",
+            "data": "2/16/2017",
+            "transacao": "recebimento"
+        },
+        {
+            "id": 3,
+            "valor": 110,
+            "cliente": "Douglas",
+            "FormaPagamento": "Dinheiro",
+            "data": "3/1/2017",
+            "transacao": "recebimento"
+        },
+        {
+            "id": 4,
+            "valor": 300,
+            "cliente": "Douglas",
+            "FormaPagamento": "Dinheiro",
+            "data": "4/19/2017",
+            "transacao": "recebimento"
+        },
+        {
+            "id": 5,
+            "valor": 420,
+            "cliente": "Douglas",
+            "FormaPagamento": "Dinheiro",
+            "data": "5/8/2017",
+            "transacao": "recebimento"
+        },
+        {
+            "id": 6,
+            "valor": 30,
+            "cliente": "Douglas",
+            "FormaPagamento": "Dinheiro",
+            "data": "5/8/2017",
+            "transacao": "recebimento"
+        },
+        {
+            "id": 7,
+            "valor": 50.00,
+            "cliente": "Marisa",
+            "FormaPagamento": "Cheque",
+            "data": "5/11/2017",
+            "transacao": "recebimento"
+        },
+        {
+            "id": 8,
+            "valor": 15.50,
+            "cliente": "Elena",
+            "FormaPagamento": "Dinheiro",
+            "data": "5/3/2017",
+            "transacao": "recebimento"
+        },
+        {
+            "id": 9,
+            "valor": 290.00,
+            "cliente": "Angélica",
+            "FormaPagamento": "Cheque",
+            "data": "5/4/2017",
+            "transacao": "recebimento"
+        },
+        {
+            "id": 10,
+            "valor": 100.00,
+            "cliente": "Maria Lucas",
+            "FormaPagamento": "Dinheiro",
+            "data": "5/11/2017",
+            "transacao": "recebimento"
+        }
+    ]
+}

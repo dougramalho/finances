@@ -21,7 +21,8 @@ export const Recebimentos = (state=[], action) =>{
             newArray = Object.assign([], state);
             let recebimento = newArray.filter((recebimento) => recebimento.id === action.payload);
 
-            return recebimento;
+            
+            return recebimento.length > 0 ? recebimento[0] : {};
 
         case CONSTANTS.SALVAR_RECEBIMENTO :
             newArray = Object.assign([], state);
@@ -52,9 +53,9 @@ export const Pagamentos = (state=[], action) =>{
             return [...state, action.payload];
         case CONSTANTS.EDITAR_PAGAMENTO :
             newArray = Object.assign([], state);
-            let pagamento = newArray.filter((pagamento) => pagamento.id === action.payload ? action.payload : pagamento);
+            let pagamento = newArray.filter((pagamento) => pagamento.id === action.payload);
 
-            return pagamento;
+            return pagamento.length > 0 ? pagamento[0] : {};
 
         case CONSTANTS.SALVAR_PAGAMENTO :
 
@@ -70,42 +71,8 @@ export const Pagamentos = (state=[], action) =>{
 	}
 }
 
-export const Caixa = (state=[], action) =>{
-	
-	let caixa = [];
-	
-	switch(action.type){
-		case CONSTANTS.LISTAR_CAIXA :
-			
-            let actionListarEntradas = {
-                type: CONSTANTS.LISTAR_ENTRADAS,
-                payload: action.payload
-            };
-
-            let actionListarSaidas = {
-                type: CONSTANTS.LISTAR_SAIDAS,
-                payload: action.payload
-            };
-
-            state = [...Entradas([], actionListarEntradas), ...Saidas([], actionListarSaidas)].reverse((a, b) => {
-                if (a.data > b.data) {
-                    return 1;
-                }
-                if (a.data < b.data) {
-                    return -1;
-                }
-                return 0;
-            });
-
-            return state;
-		default:
-			return state;
-	}
-}
-
 export default combineReducers({
 	Recebimentos,
-	Pagamentos,
-    Caixa
+	Pagamentos
 });
 

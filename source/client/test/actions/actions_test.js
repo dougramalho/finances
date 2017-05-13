@@ -3,12 +3,13 @@ import CONSTANTS from "../../src/constants.js";
 import { 
     ListarRecebimentos ,
     ListarPagamentos,
-    ExibirCaixa,
     InserirRecebimento,
     InserirPagamentoDuplicata,
     InserirPagamento,
     EditarPagamento,
-    EditarRecebimento
+    EditarRecebimento,
+    SalvarPagamento,
+    SalvarRecebimento
 
 } from "../../src/actions/actions.js";
 
@@ -48,19 +49,6 @@ describe("Actions", () => {
 
         it("has the correct payload", () =>{
             const action = ListarPagamentos(filter);
-            expect(action.payload).to.equal(filter);
-        });
-    });
-
-    describe("ExibirCaixa", () => {
-
-        it("has the correct type", () =>{
-            const action = ExibirCaixa({});
-            expect(action.type).to.equal(CONSTANTS.LISTAR_CAIXA);
-        });
-
-        it("has the correct payload", () =>{
-            const action = ExibirCaixa(filter);
             expect(action.payload).to.equal(filter);
         });
     });
@@ -152,6 +140,47 @@ describe("Actions", () => {
         it("has the correct payload", () =>{
             const action = EditarRecebimento(1);
             expect(action.payload).to.equal(1);
+        });
+    });
+
+    describe("SalvarPagamento", () => {
+
+        it("has the correct type", () =>{
+            const action = SalvarPagamento({});
+            expect(action.type).to.equal(CONSTANTS.SALVAR_PAGAMENTO);
+        });
+
+        it("has the correct payload", () =>{
+            let pagamento = {
+                "id": 1,
+                "valor": 21,
+                "destino": "Linhas",
+                "FormaPagamento": "Dinheiro",
+                "data": "5/8/2017",
+                "tipo": "especie"
+            }
+            const action = SalvarPagamento(pagamento);
+            expect(action.payload).to.equal(pagamento);
+        });
+    });
+
+    describe("SalvarRecebimento", () => {
+
+        it("has the correct type", () =>{
+            const action = SalvarRecebimento({});
+            expect(action.type).to.equal(CONSTANTS.SALVAR_RECEBIMENTO);
+        });
+
+        it("has the correct payload", () =>{
+            let recebimento = {
+                "id": 1,
+                "valor": 15.50,
+                "cliente": "Douglas",
+                "FormaPagamento": "Dinheiro",
+                "data": "5/8/2017"
+            };
+            const action = SalvarRecebimento(recebimento);
+            expect(action.payload).to.equal(recebimento);
         });
     });
 });

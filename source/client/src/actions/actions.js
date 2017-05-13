@@ -1,4 +1,5 @@
 import CONSTANTS from "../constants";
+import fetch from "isomorphic-fetch";
 
 export const ListarRecebimentos = (filtro) => {
     return {
@@ -10,13 +11,6 @@ export const ListarRecebimentos = (filtro) => {
 export const ListarPagamentos = (filtro) => {
     return {
         type: CONSTANTS.LISTAR_PAGAMENTOS,
-        payload: filtro
-    };
-}
-
-export const ExibirCaixa = (filtro) => {
-    return {
-        type: CONSTANTS.LISTAR_CAIXA,
         payload: filtro
     };
 }
@@ -55,3 +49,44 @@ export const EditarRecebimento = (idRecebimento) => {
         payload: parseInt(idRecebimento)
     };
 }
+
+export const SalvarRecebimento = (recebimento) => {
+    return {
+        type: CONSTANTS.SALVAR_RECEBIMENTO,
+        payload: recebimento
+    }
+}
+
+export const SalvarPagamento = (pagamento) => {
+    return {
+        type: CONSTANTS.SALVAR_PAGAMENTO,
+        payload: pagamento
+    }
+}
+
+export const FetchInputs = () => dispatch =>{
+
+	fetch("http://localhost:3333/inputs/")
+		.then(response => response.json())
+		.then(inputs => {
+			inputs.results.map(value => dispatch(InserirRecebimento(value)));
+		})
+		.catch(error => {
+			dispatch(AddError(error.message));
+		});
+
+}
+
+export const FetchOutputs = () => dispatch =>{
+
+	fetch("http://localhost:3333/outputs/")
+		.then(response => response.json())
+		.then(outputs => {
+			outputs.results.map(value => dispatch(InserirPagamento(value)));
+		})
+		.catch(error => {
+			console.log(error);
+		});
+
+}
+
