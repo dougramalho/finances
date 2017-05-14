@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {Grid, Row, Col, Panel} from "react-bootstrap";
-import Recebimentos from "./recebimentos.js";
-import Pagamentos from "./pagamentos.js";
+import Recebimentos from "../containers/recebimentos.js";
+import Pagamentos from "../containers/pagamentos.js";
 import Caixa from "./caixa.js";
 
 export default class Main extends Component {

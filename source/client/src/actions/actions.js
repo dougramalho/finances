@@ -29,6 +29,15 @@ export const InserirPagamento = (pagamento) => {
     };
 }
 
+export const InserirCaixa = (caixa) => {
+    return {
+        type: CONSTANTS.INSERIR_CAIXA,
+        payload: caixa
+    };
+}
+
+
+
 export const InserirPagamentoDuplicata = (pagamento) => {
     return {
         type: CONSTANTS.INSERIR_PAGAMENTO_DUPLICADA,
@@ -64,7 +73,7 @@ export const SalvarPagamento = (pagamento) => {
     }
 }
 
-export const FetchInputs = () => dispatch =>{
+export const FetchRecebimentos = () => dispatch =>{
 
 	fetch("http://localhost:3333/inputs/")
 		.then(response => response.json())
@@ -77,7 +86,7 @@ export const FetchInputs = () => dispatch =>{
 
 }
 
-export const FetchOutputs = () => dispatch =>{
+export const FetchPagamentos = () => dispatch =>{
 
 	fetch("http://localhost:3333/outputs/")
 		.then(response => response.json())
@@ -89,4 +98,25 @@ export const FetchOutputs = () => dispatch =>{
 		});
 
 }
+
+export const FetchCaixa = () => dispatch =>{
+
+	fetch("http://localhost:3333/caixa/")
+		.then(response => response.json())
+		.then(outputs => {
+			outputs.results.map(value => dispatch(InserirCaixa(value)));
+		})
+		.catch(error => {
+			console.log(error);
+		});
+
+}
+
+export function Authenticate(isLoggedIn){
+    return {
+        type: CONSTANTS.CHANGE_AUTH,
+        payload: isLoggedIn
+    }
+}
+
 

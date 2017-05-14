@@ -71,8 +71,36 @@ export const Pagamentos = (state=[], action) =>{
 	}
 }
 
+export const Caixa = (state=[], action) => {
+    let newArray = [];
+
+	switch(action.type){
+		case CONSTANTS.LISTAR_CAIXA :
+			newArray = Object.assign([], state);
+            newArray = newArray.filter((caixa) => caixa.data >= action.payload.dataInicial && caixa.data <= action.payload.dataFinal);
+            
+            return newArray;
+        case CONSTANTS.INSERIR_CAIXA :
+			return [...state, action.payload];
+		default:
+			return state;
+	}
+}
+
+export const Auth = (state=false, action) => {
+    
+    switch(action.type) {
+        case CONSTANTS.CHANGE_AUTH :
+            return action.payload
+        default :
+            return state;
+    }
+}
+
 export default combineReducers({
 	Recebimentos,
-	Pagamentos
+	Pagamentos,
+    Caixa,
+    Auth
 });
 
