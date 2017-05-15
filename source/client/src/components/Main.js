@@ -7,7 +7,7 @@ import Caixa from "./caixa.js";
 export default class Main extends Component {
     render(){
         return (
-            <Grid className="main">
+            <div className="main">
                 <Row>
                     <Col xs={6} md={6}>
                         <Panel header="Recebimentos" bsStyle="success">
@@ -28,7 +28,7 @@ export default class Main extends Component {
                         </Panel>
                     </Col>
                 </Row>
-            </Grid>
+            </div>
         );
     }
 }
