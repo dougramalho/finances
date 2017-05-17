@@ -8,7 +8,7 @@ export default class Pagamentos extends Component {
 	}
 
     componentDidMount(){
-		this.props.fetchPagamentos();
+		//this.props.fetchPagamentos();
 	}
     
     render(){

@@ -8,7 +8,7 @@ export default class Recebimentos extends Component {
 	}
 
     componentDidMount(){
-		this.props.fetchRecebimentos();
+		//this.props.fetchRecebimentos();
 	}
     
     render(){
